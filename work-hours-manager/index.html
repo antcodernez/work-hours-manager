@@ -13,15 +13,40 @@
     </header>
     <main> 
       <section>
-        <form action="">
+        <form action="" class="form">
           <label for="">
-            <input type="text" name="" id="">
+            <span>Empleado nombre: </span>
+            <input type="text" name="" id="name">
           </label>
+          <label for="">
+            <span>Departamento: </span>
+            <input type="text" name="" id="department">
+          </label>
+          <label for="">
+            <span>Salario: </span>
+            <input type="text" name="" id="salary">
+          </label>
+          <label for="">
+            <span>Jornada: </span>
+            <input type="text" name="" id="journey">
+          </label>
+          <button type="submit">Registrar empleado</button>
         </form>
       </section>
-      <section>
-        
+
+      <section class="content-empleados">
+        <div class="content-empleados__card">
+          <p class="name-empleado">
+            Jesus A
+          </p>
+          <p class="general-info">Cosas escritas alv</p>
+          <div>
+            <button class="btn-edit-info">Edit info</button>
+          <button class="btn-show-info">Show data</button>
+          </div>
+        </div>
       </section>
+
     </main>
     <script type="module" src="/code.js"></script>
   </body>

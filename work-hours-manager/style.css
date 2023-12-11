@@ -23,3 +23,32 @@ header
         font-size: 3.2rem;
       }
   }
+main
+  {
+    display: flex;
+  }
+.form
+  {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 500px;
+    background-color: beige;
+  }
+.content-empleados
+  {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: 500px;
+    background-color: cadetblue;
+    overflow-y: scroll;
+  }
+.content-empleados__card
+  {
+    display: grid;
+    grid-template-columns: 40px 2fr 1fr;
+    width: inherit;
+    height: 90px;
+    background-color: rebeccapurple;
+  }

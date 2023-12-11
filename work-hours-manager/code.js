@@ -36,16 +36,17 @@ class Queue {
     }
 
 class Employee {
-    constructor(name, area, salary)
+    constructor(name, area, salary, journey)
         {
             this.name = name;
             this.area = area;
             this.salary = salary;
-            this.journey = 8;
-            this.horasTrabajadas = null;
-            this.horaEntrada = null;
-            this.horaSalida = null;
-            this.horasExtra = null;
+            this.journey = journey;
+                this.horasTrabajadas = null;
+                this.horaEntrada = null;
+                this.horaSalida = null;
+                this.horasExtra = null;
+                this.isWorking = false;
         }
     setHoraSalida(data)
         {   
@@ -55,17 +56,11 @@ class Employee {
         {   
             this.horaEntrada = data;
         }
-    setHorasTrabajadas()
+    setHorasTrabajadas(data)
         {
-            if(this.horaEntrada === null || this.horaSalida === null)
-                {
-                    return "Necesitas definir la hora de salida y de entrada";
-                }
-            else
-                {
-                    
-                }
+            this.horasTrabajadas = data;
         }
+    
 }
 
 const empleados = new Queue();
@@ -76,3 +71,21 @@ empleados.push(empleado1);
 empleados.push(empleado2);
 console.log(empleados.stack);
 
+
+const form = document.querySelector(".form");
+
+form.addEventListener("submit", e => {
+    e.preventDefault()
+    const name = document.getElementById("name").value;
+    const area = document.getElementById("department").value;
+    const salary = parseFloat(document.getElementById("salary").value);
+    const journey = parseFloat(document.getElementById("journey").value);
+    const data = new Employee(name, area, salary, journey);
+    empleados.push(data);
+
+    console.log(empleados.stack);
+    // const data = Object.fromEntries(
+    //     new FormData(e.target)
+    // )
+    // alert(JSON.stringify(data))
+});
