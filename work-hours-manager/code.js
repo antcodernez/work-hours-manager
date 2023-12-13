@@ -42,11 +42,11 @@ class Employee {
             this.area = area;
             this.salary = salary;
             this.journey = journey;
-                this.horasTrabajadas = null;
-                this.horaEntrada = null;
-                this.horaSalida = null;
-                this.horasExtra = null;
-                this.isWorking = false;
+            this.horasTrabajadas = null;
+            this.horaEntrada = null;
+            this.horaSalida = null;
+            this.horasExtra = null;
+            this.isWorking = false;
         }
     setHoraSalida(data)
         {   
@@ -83,9 +83,42 @@ form.addEventListener("submit", e => {
     const data = new Employee(name, area, salary, journey);
     empleados.push(data);
 
-    console.log(empleados.stack);
-    // const data = Object.fromEntries(
-    //     new FormData(e.target)
-    // )
-    // alert(JSON.stringify(data))
+    renderEmpleoyers(empleados);
 });
+
+const containerCards = document.querySelector(".content-empleados");
+
+function renderEmpleoyers(queue) 
+    {
+        containerCards.innerHTML = "";
+        let i = 0;
+        while(i < queue.count)
+            {
+                const cardContainerEmploiye = document.createElement("div");
+                cardContainerEmploiye.classList.add("content-empleados__card");
+                
+                const containerBtns = document.createElement("div");
+                const btnEdit = document.createElement("button");
+                btnEdit.innerText = "Editar";
+                const btnShow = document.createElement("button");
+                btnShow.innerText = "Mostrar";
+                btnEdit.classList.add("btn");
+                btnEdit.classList.add("btn-edit-info");
+                btnShow.classList.add("btn");
+                btnShow.classList.add("btn-show-info");
+                containerBtns.append(btnEdit, btnShow);
+                
+                const dataUser = document.createElement("p");
+                dataUser.classList.add("general-info");
+                dataUser.innerText = `Area: ${queue.stack[i].area} ${queue.stack[i].salary}
+                    ${queue.stack[i].journey}`;
+
+                const nameEmployer = document.createElement("p");
+                nameEmployer.classList.add("name-empleado");
+                nameEmployer.innerText = `${queue.stack[i].name}`;
+
+                cardContainerEmploiye.append(nameEmployer, dataUser, containerBtns);
+                containerCards.appendChild(cardContainerEmploiye);
+                i++;
+            }
+    }   
