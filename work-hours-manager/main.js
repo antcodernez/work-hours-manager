@@ -1,24 +1,165 @@
-import './style.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+class LinkedList {
+  constructor()
+      {
+          this.head = null;
+          this.size = 0;
+      }
+  add(element)
+      {
+          let node = new Node(element);
+          let current;
 
-setupCounter(document.querySelector('#counter'))
+          if(this.head == null)
+              {
+                  this.head = node;
+              }
+          else
+              {
+                  
+                  current = this.head 
+                  while(current.next)
+                      {
+                          current = current.next;
+                      }
+                  current.next = node;
+              }
+          this.size++;
+      }
+  getFirst()
+      {
+          return this.head;
+      }
+  getLast()
+      {
+          let lastNode = this.head;
+          if(lastNode)
+              {
+                  while (lastNode.next) 
+                      {
+                          lastNode = lastNode.next;
+                      }
+              }
+          return lastNode;
+      }
+  insertAt(element, index)
+      {
+          if(element < 0 || index > this.size)
+              {
+                  return console.log("Insert a valid index");
+              }
+          else
+              {
+                  let node = new Node(element);
+                  let curr, prev;
+
+                  curr = this.head;
+                  
+                  if(index == 0)
+                      {
+                          node.next = this.head;
+                          this.head = node;
+                      }
+                  else
+                      {
+                          curr = this.head;
+                          let it = 0;
+
+                          while (it < index) 
+                              {
+                                  it++;
+                                  prev = curr;
+                                  curr = curr.next;
+                              }
+                          node.next = curr;
+                          prev.next = node;
+                      }
+                  this.size++;
+              }
+      }
+  removefrom(index)
+      {
+          if(index < 0 || index >= this.size)
+              {
+                  return console.log("please enter a valid index");
+              }
+          else
+              {
+                  let current, prev, it = 0;
+                  current = this.head;
+                  prev = current;
+
+                  if(index === 0)
+                      {
+                          this.head = current.next;
+                      }
+                  else
+                      {
+                          while(it < index)
+                              {
+                                  it++;
+                                  prev = current;
+                                  current = current.next;
+                              }
+                          prev.next = current.next;
+                      }
+                  this.size--;
+
+                  return current.element;
+              }
+      }
+  removeElement(element)
+      {
+          let  current = this.head;
+          let prev = null;
+
+          while (current != null) 
+              {
+                  if(current.element === element)
+                      {
+                          if(prev == null)
+                              {
+                                  this.head = current.next;
+                              }
+                          else
+                              {
+                                  prev.next = current.next;
+                              }
+                          this.size--;
+                          return current.element;
+                      }
+                  prev = current;
+                  current = current.next;
+              }
+          return -1;
+      }
+  indexOf(element)
+      {
+          let count = 0;
+          let current = this.head;
+
+          while (current != null) 
+              {
+                  if(current.element === element)
+                      {
+                          return count;
+                      }
+                  count++;
+                  current = current.next;
+              }
+          
+          return -1;
+      }
+  printList()
+      {
+          let current = this.head;
+          let str = "";
+          
+          while(current)
+              {
+                  str += current.element + " ";
+                  current = current.next;
+              }
+          console.log(str);
+      }
+}

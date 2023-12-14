@@ -17,37 +17,79 @@
           <label for="">
             <span>Empleado nombre: </span>
             <input type="text" name="" id="name" required>
-          </label>
-          <label for="">
+          </label>          
+          <label for="department">
             <span>Departamento: </span>
-            <input type="text" name="" id="department" required>
+            <select name="departments" id="department" required>
+              <option value="selecciona">Selecciona un Area</option>
+              <option value="TI">Tecnologías de la información</option>
+              <option value="VIN">Vinculación</option>
+              <option value="MKT">Marketing</option>
+              <option value="RH">Recursos Humanos</option>
+              <option value="ADM">Administrativo</option>
+              <option value="SEC">Seguridad</option>
+            </select>
           </label>
           <label for="">
             <span>Salario: </span>
-            <input type="text" name="" id="salary" required>
+            <input type="number" name="" id="salary" required>
           </label>
           <label for="">
             <span>Jornada: </span>
-            <input type="text" name="" id="journey" required>
+              <select name="journey" id="journey" required>
+                <option value="selecciona">Selecciona una jordana</option>
+                <option value="Completa">Completa</option>
+                <option value="1/2">Medio tiempo</option>
+                <option value="Ext">Extra</option>
+              </select>
+            </label>
           </label>
           <button type="submit">Registrar empleado</button>
         </form>
       </section>
 
       <section class="content-empleados">
-        <div class="content-empleados__card">
-          <p class="name-empleado">
-            Jesus A
-          </p>
-          <p class="general-info">Cosas escritas</p>
-          <div>
-            <button class="btn-edit-info btn">Editar</button>
-<button class="btn-show-info btn">Mostrar</button>
-          </div>
-        </div>
+        <h1 class="title-dummie">Aquí van sus empleados :D </h1>
       </section>
 
+      
     </main>
+    <div class="imagen-light">
+      <form action="" class="form form-number-two">
+        <label for="">
+          <span>Empleado nombre: </span>
+          <input type="text" name="" id="name-update" required>
+        </label>          
+        <label for="department">
+          <span>Departamento: </span>
+          <select name="departments" id="department-update" required>
+            <option value="selecciona">Selecciona un Area</option>
+            <option value="TI">Tecnologías de la información</option>
+            <option value="VIN">Vinculación</option>
+            <option value="MKT">Marketing</option>
+            <option value="RH">Recursos Humanos</option>
+            <option value="ADM">Administrativo</option>
+            <option value="SEC">Seguridad</option>
+          </select>
+        </label>
+        <label for="">
+          <span>Salario: </span>
+          <input type="number" name="" id="salary-update" required>
+        </label>
+        <label for="">
+          <span>Jornada: </span>
+            <select name="journey" id="journey-update" required>
+              <option value="selecciona">Selecciona una jordana</option>
+              <option value="Completa">Completa</option>
+              <option value="1/2">Medio tiempo</option>
+              <option value="Ext">Extra</option>
+            </select>
+          </label>
+        </label>
+        <button type="submit">Registrar empleado</button>
+      </form>
+      <button class="btn-close-form btn-4">Close</button>
+    </div>
     <script type="module" src="/code.js"></script>
   </body>
 </html>

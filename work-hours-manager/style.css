@@ -6,7 +6,7 @@
 
 html {
   font-size: 70.5%;
-  font-family: 'Courier New', Courier, monospace;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: rgb(255, 255, 255);
 }
 
@@ -31,7 +31,7 @@ header {
 
 main {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -45,30 +45,58 @@ main {
   border-radius: 5px;
   margin: 20px; /* Añadido margen para separar del borde de la página */
 }
-
+option
+  {
+    cursor: pointer;
+  }
 label {
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
+  width: 90%;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
 span {
   margin-bottom: 5px;
   border-radius: 15px;
 }
-
+input
+  {
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    color: rgb(19, 50, 203);
+    font-weight: 700;
+  }
+select 
+  {
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    padding: 10px;
+    color: rgb(19, 50, 203);
+    font-weight: 700;
+  }
 button {
-  background-color: #b5bbc0;
+  background-color: #216ca9;
   color: #fff;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  height: 60px;
+  width: 70%;
+  font-weight: bold;
+  border-radius: 50px;
 }
 
 button:hover {
-  background-color: rgb(110, 197, 225);
+  background-color: rgb(18, 20, 20);
 }
 
 .content-empleados {
@@ -79,6 +107,7 @@ button:hover {
   background-color:  rgb(84, 134, 150);
   overflow-y: scroll;
   align-items: center;
+  gap: 10px; 
 }
 .content-empleados__card {
   display: grid;
@@ -106,7 +135,7 @@ button:hover {
   border: none;
   border-radius: 8%;
   cursor: pointer;
-
+  margin-top: 4px;
   /* Tamaño fijo para el botón */
   width: 100px;
   height: 30px;
@@ -114,3 +143,42 @@ button:hover {
   /* Tamaño fijo para el texto del botón */
   font-size: 14px;
 }
+.title-dummie
+  {
+    color: white;
+    font-size: 48px;
+    text-align: center;
+    margin-top: 136px;
+  }
+.form-number-two
+  {
+    position: absolute;
+    right: 20%;
+    background-color: #14b5edd4;
+  }
+.imagen-light
+  {
+      position: fixed;
+      background: rgba(0, 0, 0, 0.5);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: translate(100%);
+      transition: transform .2s ease-in-out;
+  }
+.show
+  {
+      transform: translate(0);
+  }
+.btn-4
+  {
+    margin-top: 50px;
+    position: relative;
+    left: -297px;
+    width: 280px;
+    background-color: red;
+  }
